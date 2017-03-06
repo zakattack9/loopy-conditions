@@ -27,6 +27,7 @@ greaterNumber(6, 9);
  * @return { String }
  */
 
+/*
 function stringOfNumbers(x){
 	var numberArray = [];
   for (var i = 0; i < x; i++){
@@ -35,6 +36,17 @@ function stringOfNumbers(x){
   //console.log(numberArray.toString());
   //return numberArray.toString() //not used becuase it gives error on index.html
   return numberArray.toString().replace(/,/g, ""); // "/,/g" is used to remove ALL (g for global) commas in strig (bypasses test file)
+}
+stringOfNumbers(9);
+*/
+
+//exact same function as above but simplified
+function stringOfNumbers(x){
+  var numberArray = "";
+  for (var i = 0; i < x; i++){
+    numberArray += i;
+  }
+  return numberArray;
 }
 stringOfNumbers(9);
 
@@ -108,6 +120,7 @@ function getEvens(array){
   var evenArray = [];
   for(var i = 0; i < length; i++){
   	var y = array[0].toString().split("").pop(); //takes only the last digit of the number
+    //"y" converts first value of array to a string, it then splits the digits up by commas, then takes the last digit using .pop()
   	if(y == 0 || y == 2 || y == 4 || y == 6 || y == 8){
   		evenArray.push(array[0]);
   		array.shift();
@@ -139,7 +152,7 @@ function getOdds(array){
   var length =  array.length;
   var oddArray = [];
   for(var i = 0; i < length; i++){
-  	var y = array[0].toString().split("").pop();
+  	var y = array[0].toString().split("").pop(); 
   	if(y == 1 || y == 3 || y == 5 || y == 7 || y == 9){
   		oddArray.push(array[0]);
   		array.shift();
